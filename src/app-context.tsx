@@ -15,9 +15,16 @@ export type EpisodeGeneratorInputs = {
   order: ScheduleOrder;
 };
 
+export type PinType = {
+  asset_id: string;
+  pin_position?: Number;
+};
+
 type AssetContextType = {
   assets: Array<AssetType>;
   setAssets: Dispatch<SetStateAction<Array<AssetType>>>;
+  pins: Array<PinType>;
+  setPins: Dispatch<SetStateAction<Array<PinType>>>;
   episodeInfo: EpisodeGeneratorInputs;
   setEpisodeInfo: Dispatch<SetStateAction<EpisodeGeneratorInputs>>;
 };
@@ -25,6 +32,8 @@ type AssetContextType = {
 export const AppContext = createContext<AssetContextType>({
   assets: [],
   setAssets: () => {},
+  pins: [],
+  setPins: () => {},
   episodeInfo: {
     days: 3,
     episodesPerDay: 2,
