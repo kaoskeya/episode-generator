@@ -11,7 +11,7 @@ const AssetList = () => {
         <ListGroup.Item className="d-flex justify-content-between align-items-start">
           {asset.name}
           <Badge pill bg="dark">
-            {Duration.fromMillis(asset.runtime).toISOTime().toString().slice(6)}
+            {Duration.fromMillis(asset.runtime).toISOTime().toString().slice(3)}
           </Badge>
         </ListGroup.Item>
       ))}
